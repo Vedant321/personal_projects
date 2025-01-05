@@ -1,1 +1,1 @@
-# personal_projects
+# These are my personal practice projects
