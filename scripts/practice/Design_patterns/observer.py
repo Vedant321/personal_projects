@@ -27,7 +27,6 @@ class YoutubeUser(YoutubeSubscriber):
     def sendNotification(self, channel, event):
         print(f"User {self.name} received notification from {channel}: {event}")
 
-
 channel = YoutubeChannel("neetcode")
 
 channel.subscribe(YoutubeUser("sub1"))
