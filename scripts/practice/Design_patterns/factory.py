@@ -1,3 +1,4 @@
+# This is a creational pattern
 class Burger:
     def __init__(self, ingredients):
         self.ingredients = ingredients

@@ -1,3 +1,4 @@
+# THis is a Creational Pattern.
 class ApplicationState:
     instance = None
 

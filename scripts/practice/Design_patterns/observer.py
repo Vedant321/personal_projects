@@ -1,3 +1,4 @@
+# THis is a Behavioural pattern.
 class YoutubeChannel:
     def __init__(self, name):
         self.name = name
