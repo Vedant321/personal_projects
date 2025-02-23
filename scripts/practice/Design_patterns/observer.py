@@ -10,7 +10,7 @@ class YoutubeChannel:
     def notify(self, event):
         for sub in self.subscribers:
             sub.sendNotification(self.name, event)
-    
+
 
 from abc import ABC, abstractmethod
 

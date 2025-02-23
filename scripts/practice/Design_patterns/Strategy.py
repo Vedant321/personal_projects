@@ -14,7 +14,6 @@ class RemoveNegativeStrategy(FilterStrategy):
     def removeValue(self, val):
         return val < 0
     
-
 class RemoveOddStrategy(FilterStrategy):
 
     def removeValue(self, val):

@@ -4,7 +4,7 @@ class ListNode:
     def __init__(self, val):
         self.val = val
         self.next = None
-        
+
 class LinkedList:
     def __init__(self, head):
         self.head = head
@@ -24,7 +24,6 @@ class LinkedList:
         
         else:
             raise StopIteration
-
 
 # Initialize Linked List
 head = ListNode(1)
