@@ -1,3 +1,4 @@
+# THis is a Behavioural pattern.
 class YoutubeChannel:
     def __init__(self, name):
         self.name = name
@@ -9,10 +10,9 @@ class YoutubeChannel:
     def notify(self, event):
         for sub in self.subscribers:
             sub.sendNotification(self.name, event)
-    
+
 
 from abc import ABC, abstractmethod
-
 
 class YoutubeSubscriber(ABC):
     @abstractmethod

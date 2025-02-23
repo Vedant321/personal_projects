@@ -1,3 +1,4 @@
+# THis is a Creational Pattern.
 class ApplicationState:
     instance = None
 
@@ -18,4 +19,3 @@ appState1.isLoggedIn = True
 
 print(appState1.isLoggedIn)
 print(appState2.isLoggedIn)
-# print("HI")

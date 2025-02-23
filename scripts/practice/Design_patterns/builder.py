@@ -1,3 +1,4 @@
+# This is a creational pattern.
 class Burger:
     def __init__(self):
         self.buns = None
@@ -33,4 +34,3 @@ burger = BurgerBuilder()\
         .addBuns("sesame")\
         .addCheese("Swiss-cheese")\
         .addPatty("fish-patty")
-

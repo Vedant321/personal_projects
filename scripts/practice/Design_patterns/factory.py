@@ -1,3 +1,4 @@
+# This is a creational pattern.
 class Burger:
     def __init__(self, ingredients):
         self.ingredients = ingredients
@@ -11,7 +12,6 @@ class BurgerFactory:
     def createCheeseBurger(self):
         ingredients = ['bun', 'cheese', 'beef-patty']
         return Burger(ingredients)
-
 
     def createDeluxCheeseBurger(self):
         ingredients = ['bun', 'cheese', 'beef-patty', 'tamatos', 'lettuce']
