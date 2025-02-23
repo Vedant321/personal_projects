@@ -9,7 +9,6 @@ class FilterStrategy(ABC):
     def removeValue(self, val):
         pass
 
-
 class RemoveNegativeStrategy(FilterStrategy):
 
     def removeValue(self, val):

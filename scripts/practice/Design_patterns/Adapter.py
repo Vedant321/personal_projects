@@ -11,8 +11,7 @@ class UsbCable:
 class UsbPort:
     def __init__(self):
         self.portAvailable = True
-
-    
+  
     def plug(self, usb):
 
         if self.portAvailable:

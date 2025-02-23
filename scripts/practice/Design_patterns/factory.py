@@ -13,7 +13,6 @@ class BurgerFactory:
         ingredients = ['bun', 'cheese', 'beef-patty']
         return Burger(ingredients)
 
-
     def createDeluxCheeseBurger(self):
         ingredients = ['bun', 'cheese', 'beef-patty', 'tamatos', 'lettuce']
         return Burger(ingredients)

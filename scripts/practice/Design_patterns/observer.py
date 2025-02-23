@@ -14,7 +14,6 @@ class YoutubeChannel:
 
 from abc import ABC, abstractmethod
 
-
 class YoutubeSubscriber(ABC):
     @abstractmethod
     def sendNotification(self, event):
