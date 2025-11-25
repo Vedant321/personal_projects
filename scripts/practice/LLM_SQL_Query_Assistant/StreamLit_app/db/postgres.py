@@ -21,3 +21,25 @@ class PostgresDB:
             return df
         except Exception as e:
             return f"Error: {e}"
+    
+    def execute_script(self, sql_script):
+        """
+        Execute multiple SQL statements (CREATE TABLE, INSERT, etc.)
+        Handles multiple statements separated by semicolons.
+        """
+        try:
+            conn = self.get_connection()
+            cur = conn.cursor()
+
+            # Split statements by semicolon, filter out empty ones
+            statements = [s.strip() for s in sql_script.split(";") if s.strip()]
+
+            for stmt in statements:
+                cur.execute(stmt)
+
+            conn.commit()
+            cur.close()
+            conn.close()
+            return "Script executed successfully"
+        except Exception as e:
+            return f"Error: {e}"
