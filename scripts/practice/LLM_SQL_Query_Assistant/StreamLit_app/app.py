@@ -7,6 +7,7 @@ from gpt.sql_generator import SQLGenerator
 st.set_page_config(page_title="Movie Records App", layout="wide")
 st.title("Movie Records Query App")
 
+
 db = PostgresDB()
 sql_gen = SQLGenerator()
 
