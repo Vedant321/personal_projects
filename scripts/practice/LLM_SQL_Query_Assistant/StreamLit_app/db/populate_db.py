@@ -1,4 +1,4 @@
-from .postgres import PostgresDB  # import the class from postgres.py
+from .postgres import PostgresDB
 import os
 
 db = PostgresDB()

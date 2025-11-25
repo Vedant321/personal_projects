@@ -30,8 +30,6 @@ class PostgresDB:
         try:
             conn = self.get_connection()
             cur = conn.cursor()
-
-            # Split statements by semicolon, filter out empty ones
             statements = [s.strip() for s in sql_script.split(";") if s.strip()]
 
             for stmt in statements:
