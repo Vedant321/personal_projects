@@ -1,6 +1,7 @@
 from openai import OpenAI
 from config import OPENAI_API_KEY
 
+
 class SQLGenerator:
     def __init__(self, api_key=OPENAI_API_KEY):
         self.client = OpenAI(api_key=api_key)

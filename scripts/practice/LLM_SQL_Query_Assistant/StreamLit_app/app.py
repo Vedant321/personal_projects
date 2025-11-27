@@ -1,5 +1,5 @@
 from auth.login import login_page
-from query_page import main_page  # renamed module
+from query_page import main_page
 
 # Show login page first
 if login_page():
