@@ -1,5 +1,6 @@
 import streamlit as st
-from auth.users import validate_user
+from .users import validate_user
+
 
 def login_page():
     if 'logged_in' not in st.session_state:

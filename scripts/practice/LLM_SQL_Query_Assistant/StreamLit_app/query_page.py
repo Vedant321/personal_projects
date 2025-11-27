@@ -3,6 +3,7 @@ import pandas as pd
 from db.postgres import PostgresDB
 from gpt.sql_generator import SQLGenerator
 
+
 st.set_page_config(page_title="Movie Records App", layout="wide")
 
 def main_page():
