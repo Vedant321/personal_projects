@@ -1,4 +1,4 @@
-from config import AUTH_USERS
+from ..config import AUTH_USERS
 
 def validate_user(username, password):
     """

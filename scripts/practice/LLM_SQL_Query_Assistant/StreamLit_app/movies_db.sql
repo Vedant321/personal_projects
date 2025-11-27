@@ -1,6 +1,4 @@
--- =========================================
--- MOVIES TABLE
--- =========================================
+
 CREATE TABLE movies (
     movie_id SERIAL PRIMARY KEY,
     title TEXT NOT NULL,
@@ -22,9 +20,7 @@ INSERT INTO movies (title, release_year, duration_minutes, rating, revenue_milli
 ('Her', 2013, 126, 8.0, 47),
 ('The Imitation Game', 2014, 114, 8.0, 233);
 
--- =========================================
--- GENRES TABLE
--- =========================================
+
 CREATE TABLE genres (
     genre_id SERIAL PRIMARY KEY,
     genre_name TEXT UNIQUE
@@ -40,9 +36,7 @@ INSERT INTO genres (genre_name) VALUES
 ('Comedy'),
 ('Romance');
 
--- =========================================
--- MOVIE_GENRES TABLE
--- =========================================
+
 CREATE TABLE movie_genres (
     movie_id INT REFERENCES movies(movie_id),
     genre_id INT REFERENCES genres(genre_id),
@@ -50,20 +44,18 @@ CREATE TABLE movie_genres (
 );
 
 INSERT INTO movie_genres VALUES
-(1, 3), (1, 1),           -- Inception: Sci-Fi, Action
-(2, 3), (2, 2), (2, 6),   -- Interstellar: Sci-Fi, Drama, Adventure
-(3, 1), (3, 5), (3, 4),   -- Dark Knight: Action, Crime, Thriller
-(4, 3), (4, 1),           -- Matrix: Sci-Fi, Action
-(5, 2), (5, 5),           -- Parasite: Drama, Crime
-(6, 1), (6, 6),           -- Endgame: Action, Adventure
-(7, 2), (7, 4),           -- Joker: Drama, Thriller
-(8, 2),                    -- Shawshank: Drama
-(9, 3), (9, 8),           -- Her: Sci-Fi, Romance
-(10, 2), (10, 4);         -- Imitation Game: Drama, Thriller
+(1, 3), (1, 1),           
+(2, 3), (2, 2), (2, 6),   
+(3, 1), (3, 5), (3, 4),   
+(4, 3), (4, 1),           
+(5, 2), (5, 5),           
+(6, 1), (6, 6),           
+(7, 2), (7, 4),           
+(8, 2),                   
+(9, 3), (9, 8),           
+(10, 2), (10, 4);         
 
--- =========================================
--- ACTORS TABLE
--- =========================================
+
 CREATE TABLE actors (
     actor_id SERIAL PRIMARY KEY,
     actor_name TEXT
@@ -81,9 +73,7 @@ INSERT INTO actors (actor_name) VALUES
 ('Morgan Freeman'),
 ('Scarlett Johansson');
 
--- =========================================
--- MOVIE_CAST TABLE
--- =========================================
+
 CREATE TABLE movie_cast (
     movie_id INT REFERENCES movies(movie_id),
     actor_id INT REFERENCES actors(actor_id),
@@ -93,9 +83,7 @@ CREATE TABLE movie_cast (
 INSERT INTO movie_cast VALUES
 (1,1),(2,2),(3,3),(3,4),(4,5),(5,6),(6,7),(7,8),(8,9),(9,10),(10,1);
 
--- =========================================
--- DIRECTORS TABLE
--- =========================================
+
 CREATE TABLE directors (
     director_id SERIAL PRIMARY KEY,
     director_name TEXT
@@ -112,9 +100,7 @@ INSERT INTO directors (director_name) VALUES
 ('Anthony Russo'),
 ('Joe Russo');
 
--- =========================================
--- MOVIE_DIRECTORS TABLE
--- =========================================
+
 CREATE TABLE movie_directors (
     movie_id INT REFERENCES movies(movie_id),
     director_id INT REFERENCES directors(director_id),
@@ -124,9 +110,7 @@ CREATE TABLE movie_directors (
 INSERT INTO movie_directors VALUES
 (1,1),(2,5),(3,1),(4,4),(5,2),(6,8),(6,9),(7,3),(8,1),(9,6),(10,7);
 
--- =========================================
--- RATINGS TABLE
--- =========================================
+
 CREATE TABLE ratings (
     rating_id SERIAL PRIMARY KEY,
     movie_id INT REFERENCES movies(movie_id),
