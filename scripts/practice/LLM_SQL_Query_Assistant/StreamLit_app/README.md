@@ -1,4 +1,6 @@
-![Screenshot of App](assets/Streamlit_deployed.png)
+![Screenshot of App](assets/Intelligent_Movie_App_Demo.webm)
 
-![Screenshot of App querying](assets/Streamlit_deployed2.png)
+![Screenshot of App](assets/Movie_app_Login.png)
+
+![Screenshot of App querying](assets/Movie_Results.png)
 
