@@ -3,41 +3,39 @@ import pandas as pd
 from db.postgres import PostgresDB
 from gpt.sql_generator import SQLGenerator
 
-
-st.set_page_config(page_title="Movie Records App", layout="wide")
-
 def main_page():
-    st.title("Movie Records Query App")
+    st.markdown("<h1>🍿 Movie Database Explorer</h1>", unsafe_allow_html=True)
 
     db = PostgresDB()
     sql_gen = SQLGenerator()
 
-    user_input = st.text_input("Enter your query in plain English:")
+    # User Query Section
+    st.markdown("<div class='netflix-card'>", unsafe_allow_html=True)
+    user_input = st.text_input("Ask something about movies…")
+    st.markdown("</div>", unsafe_allow_html=True)
 
+    # Generate SQL
     if st.button("Generate SQL"):
         if user_input:
-            try:
-                sql_query = sql_gen.generate(user_input)
-                st.code(sql_query, language='sql')
-            except Exception as e:
-                st.error(f"Error generating SQL: {e}")
+            sql_query = sql_gen.generate(user_input)
+            st.markdown("<div class='netflix-card'>", unsafe_allow_html=True)
+            st.subheader("🧠 Generated SQL")
+            st.code(sql_query, language='sql')
+            st.markdown("</div>", unsafe_allow_html=True)
         else:
             st.warning("Please enter a query.")
 
-    if st.button("Execute SQL"):
+    # Execute SQL
+    if st.button("Run Query"):
         if user_input:
-            try:
-                sql_query = sql_gen.generate(user_input)
-                
-                if sql_query.lower().startswith("error"):
-                    st.error(sql_query)
-                else:
-                    result = db.execute_query(sql_query)
-                    if isinstance(result, pd.DataFrame):
-                        st.dataframe(result)
-                    else:
-                        st.error(result)
-            except Exception as e:
-                st.error(f"Error executing SQL: {e}")
+            sql_query = sql_gen.generate(user_input)
+            result = db.execute_query(sql_query)
+            st.markdown("<div class='netflix-card'>", unsafe_allow_html=True)
+            st.subheader("📊 Results")
+            if isinstance(result, pd.DataFrame):
+                st.dataframe(result)
+            else:
+                st.error(result)
+            st.markdown("</div>", unsafe_allow_html=True)
         else:
             st.warning("Please enter a query.")

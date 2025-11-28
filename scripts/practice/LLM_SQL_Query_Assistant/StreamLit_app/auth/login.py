@@ -1,26 +1,27 @@
 import streamlit as st
-from .users import validate_user
-
+from auth.users import validate_user
 
 def login_page():
     if 'logged_in' not in st.session_state:
         st.session_state.logged_in = False
 
     if st.session_state.logged_in:
-        st.success("Welcome back!")
-        return True  # Already logged in
+        return True
 
-    st.title("Login")
+    st.markdown("<h1>🎬 Intelligent Movie Query Assistant</h1>", unsafe_allow_html=True)
 
-    username = st.text_input("Username")
+    st.markdown("<div class='login-box'>", unsafe_allow_html=True)
+
+    username = st.text_input("Email or Username")
     password = st.text_input("Password", type="password")
 
-    if st.button("Login"):
+    if st.button("Sign In"):
         if validate_user(username, password):
             st.session_state.logged_in = True
-            st.success(f"Welcome, {username}!")
-            # No need to call experimental_rerun()
+            st.success("Signed in successfully!")
         else:
-            st.error("Invalid username or password")
+            st.error("Incorrect username or password")
+
+    st.markdown("</div>", unsafe_allow_html=True)
 
     return st.session_state.logged_in
