@@ -6,6 +6,28 @@ from gpt.sql_generator import SQLGenerator
 def main_page():
     st.markdown("<h1>🍿 Movie Database Explorer</h1>", unsafe_allow_html=True)
 
+    st.sidebar.title("🧭 Need Ideas?")
+
+    st.sidebar.markdown("### 🎯 Try asking things like:")
+
+    st.sidebar.write("• *Show me the most popular movies*")
+    st.sidebar.write("• *Which movies came out in 2020?*")
+    st.sidebar.write("• *List action movies*")
+    st.sidebar.write("• *Who acted in Inception?*")
+    st.sidebar.write("• *What are the top-rated comedies?*")
+
+    st.sidebar.markdown("### 🔍 Tips")
+    st.sidebar.info(
+        "You can type your question in simple English. "
+        "**Example:** \"Find movies with Brad Pitt\""
+    )
+
+    st.sidebar.markdown("### ⭐ Fun suggestions")
+    st.sidebar.write("• *Show movies similar to Interstellar*")
+    st.sidebar.write("• *Give me some family-friendly films*")
+    st.sidebar.write("• *What are good horror movies to watch tonight?*")
+
+
     db = PostgresDB()
     sql_gen = SQLGenerator()
 
